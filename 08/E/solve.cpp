@@ -4,10 +4,15 @@ using namespace std;
 
 vector<int> jumlah_bersebelahan(vector<int> v) {
     vector<int> res;
+    int sum;
 
-    for (int i = 0; i <= v.size(); i++) {
-        int sum = v[i] + v[i + 1];
-        res.push_back(sum);
+    if (v.size() <= 1) {
+        res.push_back(v[0]);
+    } else {
+        for (int i = 0; i < v.size() - 1; i++) {
+            sum = v[i] + v[i + 1];
+            res.push_back(sum);
+        }
     }
 
     return res;
